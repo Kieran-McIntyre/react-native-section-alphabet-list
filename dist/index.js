@@ -29,6 +29,7 @@ var react_native_section_list_get_item_layout_1 = __importDefault(require("react
 var getSectionData_1 = __importDefault(require("./utilities/getSectionData"));
 var ListLetterIndex_1 = __importDefault(require("./components/ListLetterIndex"));
 var AlphabetListStyle_1 = __importDefault(require("./styles/AlphabetListStyle"));
+var sizes_1 = __importDefault(require("./values/sizes"));
 var AlphabetListView = /** @class */ (function (_super) {
     __extends(AlphabetListView, _super);
     function AlphabetListView(props) {
@@ -57,15 +58,11 @@ var AlphabetListView = /** @class */ (function (_super) {
             var item = _a.item;
             var renderItem = _this.props.renderItem;
             if (renderItem) {
-                return <react_native_1.View>{renderItem(item)}</react_native_1.View>;
+                return renderItem(item);
             }
-            return (<react_native_1.TouchableOpacity onPress={function () {
-                console.warn("pop");
-            }}>
-        <react_native_1.View style={AlphabetListStyle_1.default.item}>
-          <react_native_1.Text>{item.name}</react_native_1.Text>
-        </react_native_1.View>
-      </react_native_1.TouchableOpacity>);
+            return (<react_native_1.View style={AlphabetListStyle_1.default.listItemContainer}>
+        <react_native_1.Text style={AlphabetListStyle_1.default.listItemLabel}>{item.name}</react_native_1.Text>
+      </react_native_1.View>);
         };
         _this.onRenderSectionHeader = function (_a) {
             var section = _a.section;
@@ -73,11 +70,11 @@ var AlphabetListView = /** @class */ (function (_super) {
             if (renderSectionHeader) {
                 return renderSectionHeader(section);
             }
-            return (<react_native_1.View style={AlphabetListStyle_1.default.header}>
-        <react_native_1.Text style={AlphabetListStyle_1.default.headerLabel}>{section.title}</react_native_1.Text>
+            return (<react_native_1.View style={AlphabetListStyle_1.default.sectionHeaderContainer}>
+        <react_native_1.Text style={AlphabetListStyle_1.default.sectionHeaderLabel}>{section.title}</react_native_1.Text>
       </react_native_1.View>);
         };
-        var _a = props.getItemHeight, onGetItemHeight = _a === void 0 ? function () { return 40; } : _a, _b = props.sectionHeaderHeight, sectionHeaderHeight = _b === void 0 ? 40 : _b;
+        var _a = props.getItemHeight, onGetItemHeight = _a === void 0 ? function () { return sizes_1.default.itemHeight; } : _a, _b = props.sectionHeaderHeight, sectionHeaderHeight = _b === void 0 ? sizes_1.default.itemHeight : _b;
         _this.onGetItemLayout = react_native_section_list_get_item_layout_1.default({
             getItemHeight: function (_, sectionIndex, rowIndex) {
                 return onGetItemHeight({ sectionIndex: sectionIndex, rowIndex: rowIndex });

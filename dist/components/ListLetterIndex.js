@@ -32,7 +32,6 @@ var AlphabetLetterIndex = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.renderLetterItem = function (_a) {
             var item = _a.item, index = _a.index;
-            var indexLetterColor = _this.props.indexLetterColor;
             var computedLabelStyle = _this.getComputedLabelStyle();
             return (<react_native_1.TouchableOpacity onPress={function () { return _this.props.onPressLetter(index); }}>
         <react_native_1.View style={ListLetterIndexStyle_1.default.letterIndexItem}>

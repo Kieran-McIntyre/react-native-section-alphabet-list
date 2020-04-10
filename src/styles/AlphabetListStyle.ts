@@ -1,11 +1,13 @@
 import { ViewStyle, TextStyle } from "react-native";
+import sizes from "../values/sizes";
+import colors from "../values/colors";
 
 interface Style {
   container: ViewStyle;
-  item: ViewStyle;
-  itemLabel: TextStyle;
-  header: ViewStyle;
-  headerLabel: TextStyle;
+  listItemContainer: ViewStyle;
+  listItemLabel: TextStyle;
+  sectionHeaderContainer: ViewStyle;
+  sectionHeaderLabel: TextStyle;
 }
 
 const styles: Style = {
@@ -13,36 +15,29 @@ const styles: Style = {
     position: "relative",
   },
 
-  item: {
+  listItemContainer: {
     flex: 1,
-    backgroundColor: "brown",
-    height: 40,
-    marginLeft: 10,
+    height: sizes.itemHeight,
+    paddingHorizontal: sizes.spacing.regular,
     justifyContent: "center",
-    borderTopColor: "grey",
+    borderTopColor: colors.seperatorLine,
     borderTopWidth: 1,
   },
 
-  itemLabel: {
-    color: "grey",
-    fontWeight: "500",
-    fontSize: 12,
+  listItemLabel: {
+    color: colors.text.dark,
+    fontSize: 14,
   },
 
-  header: {
-    width: 10,
-    alignItems: "center",
+  sectionHeaderContainer: {
+    height: sizes.headerHeight,
+    backgroundColor: colors.background.dark,
     justifyContent: "center",
-    height: 10,
-    position: "absolute",
-    top: 20,
-    backgroundColor: "green",
+    paddingHorizontal: sizes.spacing.regular,
   },
 
-  headerLabel: {
-    color: "black",
-    fontWeight: "bold",
-    fontSize: 12,
+  sectionHeaderLabel: {
+    color: colors.background.light,
   },
 };
 

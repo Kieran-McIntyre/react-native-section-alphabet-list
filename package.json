@@ -14,11 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-alphabet-list.git",
-    "baseUrl": "https://github.com/github_account/react-native-alphabet-list"
+    "url": "git+https://github.com/Kieran-McIntyre/react-native-alphabet-list.git",
+    "baseUrl": "https://github.com/Kieran-McIntyre/react-native-alphabet-list"
   },
   "keywords": [
-    "react-native"
+    "react-native",
+    "alphabet",
+    "SectionList",
+    "letters",
+    "address"
   ],
   "author": {
     "name": "Kieran McIntyre",

@@ -1,36 +1,20 @@
 import * as React from "react";
 import { SectionList } from "react-native";
-import IData from "./interfaces/IData";
 import ISectionData from "./interfaces/ISectionData";
-interface Props {
-    data: IData[];
-    style?: any;
-    renderItem?: (item: IData) => JSX.Element;
-    renderSectionHeader?: (section: any) => JSX.Element;
-    onLoadMoreItems?: Function;
-    getItemHeight?: ({ sectionIndex, rowIndex, }: {
-        sectionIndex: number;
-        rowIndex: number;
-    }) => number;
-    sectionHeaderHeight?: number;
-    indexLetterColor?: string;
-}
-export default class AlphabetListView extends React.PureComponent<Props> {
+import IAlphabetListProps from "./interfaces/IAlphabetListProps";
+export default class AlphabetListView extends React.PureComponent<IAlphabetListProps> {
     state: {
         sectionData: ISectionData[];
     };
     sectionList: SectionList;
     onGetItemLayout: any;
-    constructor(props: Props);
+    constructor(props: IAlphabetListProps);
     componentDidMount(): void;
-    componentDidUpdate(prevProps: Props): void;
+    componentDidUpdate(prevProps: IAlphabetListProps): void;
     private setSectionData;
     private onScrollToSection;
     private onSetSectionListRef;
     render(): JSX.Element;
-    onRenderItem: ({ item }: {
-        item: IData;
-    }) => JSX.Element;
+    private onRenderItem;
     private onRenderSectionHeader;
 }
-export {};

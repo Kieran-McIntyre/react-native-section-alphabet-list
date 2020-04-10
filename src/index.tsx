@@ -1,40 +1,17 @@
 import * as React from "react";
-import {
-  SectionList,
-  View,
-  Text,
-  SectionListData,
-  TouchableOpacity,
-  SectionListRenderItem,
-} from "react-native";
+import { SectionList, View, Text, SectionListData } from "react-native";
 import sectionListGetItemLayout from "react-native-section-list-get-item-layout";
 import getSectionData from "./utilities/getSectionData";
 import ListLetterIndex from "./components/ListLetterIndex";
 import IData from "./interfaces/IData";
 import ISectionData from "./interfaces/ISectionData";
+import IAlphabetListProps from "./interfaces/IAlphabetListProps";
 import styles from "./styles/AlphabetListStyle";
+import sizes from "./values/sizes";
 
-interface Props {
-  data: IData[];
-
-  style?: any;
-  renderItem?: (item: IData) => JSX.Element;
-  renderSectionHeader?: (section: any) => JSX.Element;
-  onLoadMoreItems?: Function;
-
-  getItemHeight?: ({
-    sectionIndex,
-    rowIndex,
-  }: {
-    sectionIndex: number;
-    rowIndex: number;
-  }) => number;
-
-  sectionHeaderHeight?: number;
-  indexLetterColor?: string;
-}
-
-export default class AlphabetListView extends React.PureComponent<Props> {
+export default class AlphabetListView extends React.PureComponent<
+  IAlphabetListProps
+> {
   state: {
     sectionData: ISectionData[];
   } = {
@@ -44,12 +21,12 @@ export default class AlphabetListView extends React.PureComponent<Props> {
   sectionList!: SectionList;
   onGetItemLayout: any;
 
-  constructor(props: Props) {
+  constructor(props: IAlphabetListProps) {
     super(props);
 
     const {
-      getItemHeight: onGetItemHeight = () => 40,
-      sectionHeaderHeight = 40,
+      getItemHeight: onGetItemHeight = () => sizes.itemHeight,
+      sectionHeaderHeight = sizes.itemHeight,
     } = props;
 
     this.onGetItemLayout = sectionListGetItemLayout({
@@ -64,7 +41,7 @@ export default class AlphabetListView extends React.PureComponent<Props> {
     this.setSectionData();
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: IAlphabetListProps) {
     if (prevProps.data.length !== this.props.data.length) {
       this.setSectionData();
     }
@@ -114,7 +91,7 @@ export default class AlphabetListView extends React.PureComponent<Props> {
     );
   }
 
-  onRenderItem = ({ item }: { item: IData }) => {
+  private onRenderItem = ({ item }: { item: IData }) => {
     const { renderItem } = this.props;
 
     if (renderItem) {
@@ -122,13 +99,17 @@ export default class AlphabetListView extends React.PureComponent<Props> {
     }
 
     return (
-      <View style={styles.item}>
-        <Text>{item.name}</Text>
+      <View style={styles.listItemContainer}>
+        <Text style={styles.listItemLabel}>{item.name}</Text>
       </View>
     );
   };
 
-  private onRenderSectionHeader = ({ section }: { section: any }) => {
+  private onRenderSectionHeader = ({
+    section,
+  }: {
+    section: SectionListData<IData>;
+  }) => {
     const { renderSectionHeader } = this.props;
 
     if (renderSectionHeader) {
@@ -136,8 +117,8 @@ export default class AlphabetListView extends React.PureComponent<Props> {
     }
 
     return (
-      <View style={styles.header}>
-        <Text style={styles.headerLabel}>{section.title}</Text>
+      <View style={styles.sectionHeaderContainer}>
+        <Text style={styles.sectionHeaderLabel}>{section.title}</Text>
       </View>
     );
   };

@@ -27,7 +27,6 @@ export default class AlphabetLetterIndex extends React.PureComponent<Props> {
     item: ISectionData;
     index: number;
   }) => {
-    const { indexLetterColor } = this.props;
     const computedLabelStyle = this.getComputedLabelStyle();
 
     return (
