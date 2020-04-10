@@ -3,13 +3,13 @@ import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import ISectionData from "../interfaces/ISectionData";
 import styles from "../styles/ListLetterIndexStyle";
 
-export interface Props {
+interface Props {
   onPressLetter: (sectionIndex: number) => void;
   sectionData: ISectionData[];
   indexLetterColor?: string;
 }
 
-export default class AlphabetLetterIndex extends React.PureComponent<Props> {
+export default class ListLetterIndex extends React.PureComponent<Props> {
   getComputedLabelStyle() {
     const { indexLetterColor } = this.props;
 
@@ -20,21 +20,13 @@ export default class AlphabetLetterIndex extends React.PureComponent<Props> {
     }
   }
 
-  renderLetterItem = ({
-    item,
-    index,
-  }: {
-    item: ISectionData;
-    index: number;
-  }) => {
+  renderLetterItem = ({ item, index }: { item: ISectionData; index: number }) => {
     const computedLabelStyle = this.getComputedLabelStyle();
 
     return (
       <TouchableOpacity onPress={() => this.props.onPressLetter(index)}>
         <View style={styles.letterIndexItem}>
-          <Text style={[styles.letterIndexLabel, computedLabelStyle]}>
-            {item.title}
-          </Text>
+          <Text style={[styles.letterIndexLabel, computedLabelStyle]}>{item.title}</Text>
         </View>
       </TouchableOpacity>
     );

@@ -9,7 +9,7 @@ import IAlphabetListProps from "./interfaces/IAlphabetListProps";
 import styles from "./styles/AlphabetListStyle";
 import sizes from "./values/sizes";
 
-export default class AlphabetListView extends React.PureComponent<IAlphabetListProps> {
+export default class AlphabetList extends React.PureComponent<IAlphabetListProps> {
   state: {
     sectionData: ISectionData[];
   } = {

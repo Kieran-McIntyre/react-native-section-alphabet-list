@@ -79,7 +79,7 @@ var AlphabetListView = /** @class */ (function (_super) {
         };
         var _a = props.getItemHeight, onGetItemHeight = _a === void 0 ? function () { return sizes_1.default.itemHeight; } : _a, _b = props.sectionHeaderHeight, sectionHeaderHeight = _b === void 0 ? sizes_1.default.itemHeight : _b;
         _this.onGetItemLayout = react_native_section_list_get_item_layout_1.default({
-            getItemHeight: function (_, sectionIndex, rowIndex) {
+            getItemHeight: function (_rowData, sectionIndex, rowIndex) {
                 return onGetItemHeight({ sectionIndex: sectionIndex, rowIndex: rowIndex });
             },
             getSectionHeaderHeight: function () { return sectionHeaderHeight; },
