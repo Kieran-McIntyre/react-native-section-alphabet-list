@@ -1,4 +1,6 @@
-import IPreSectionData from "./IPreSectionData";
-export default interface ISectionData extends IPreSectionData {
-    index: number;
+import IData from "./IData";
+export default interface ISectionData {
+    title: string;
+    data: IData[];
+    index?: number;
 }

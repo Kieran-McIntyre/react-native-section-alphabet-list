@@ -11,7 +11,7 @@ export default class App extends Component {
   renderListItem = (item) => {
     return (
       <View style={styles.listItemContainer}>
-        <Text style={styles.listItemLabel}>{item.name}</Text>
+        <Text style={styles.listItemLabel}>{item.value}</Text>
       </View>
     );
   };

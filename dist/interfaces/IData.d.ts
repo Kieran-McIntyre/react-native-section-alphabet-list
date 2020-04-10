@@ -1,3 +1,4 @@
 export default interface IData {
-    name: string;
+    value: string;
+    key: string;
 }

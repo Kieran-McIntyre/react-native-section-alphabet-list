@@ -76,7 +76,7 @@ export default class AlphabetListView extends React.PureComponent<
           {...this.props}
           ref={this.onSetSectionListRef}
           sections={this.state.sectionData}
-          keyExtractor={(item: IData) => item.name}
+          keyExtractor={(item: IData) => item.key}
           renderItem={this.onRenderItem}
           renderSectionHeader={this.onRenderSectionHeader}
           getItemLayout={this.onGetItemLayout}
@@ -100,7 +100,7 @@ export default class AlphabetListView extends React.PureComponent<
 
     return (
       <View style={styles.listItemContainer}>
-        <Text style={styles.listItemLabel}>{item.name}</Text>
+        <Text style={styles.listItemLabel}>{item.value}</Text>
       </View>
     );
   };

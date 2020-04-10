@@ -61,7 +61,7 @@ var AlphabetListView = /** @class */ (function (_super) {
                 return renderItem(item);
             }
             return (<react_native_1.View style={AlphabetListStyle_1.default.listItemContainer}>
-        <react_native_1.Text style={AlphabetListStyle_1.default.listItemLabel}>{item.name}</react_native_1.Text>
+        <react_native_1.Text style={AlphabetListStyle_1.default.listItemLabel}>{item.value}</react_native_1.Text>
       </react_native_1.View>);
         };
         _this.onRenderSectionHeader = function (_a) {
@@ -94,7 +94,7 @@ var AlphabetListView = /** @class */ (function (_super) {
     };
     AlphabetListView.prototype.render = function () {
         return (<react_native_1.View style={[AlphabetListStyle_1.default.container, this.props.style]}>
-        <react_native_1.SectionList {...this.props} ref={this.onSetSectionListRef} sections={this.state.sectionData} keyExtractor={function (item) { return item.name; }} renderItem={this.onRenderItem} renderSectionHeader={this.onRenderSectionHeader} getItemLayout={this.onGetItemLayout}/>
+        <react_native_1.SectionList {...this.props} ref={this.onSetSectionListRef} sections={this.state.sectionData} keyExtractor={function (item) { return item.key; }} renderItem={this.onRenderItem} renderSectionHeader={this.onRenderSectionHeader} getItemLayout={this.onGetItemLayout}/>
 
         <ListLetterIndex_1.default sectionData={this.state.sectionData} onPressLetter={this.onScrollToSection} indexLetterColor={this.props.indexLetterColor}/>
       </react_native_1.View>);

@@ -25,7 +25,7 @@ var getSectionData = function (data) {
 var getAlphabetEntrySet = function (data) {
     var alphabetSet = {};
     data.forEach(function (item) {
-        var letter = getItemFirstLetter(item.name);
+        var letter = getItemFirstLetter(item.value);
         if (!letter) {
             return;
         }
@@ -47,7 +47,7 @@ var getItemFirstLetter = function (string) {
 var formatEntry = function (entry) {
     var title = entry[0], unsortedData = entry[1];
     var data = unsortedData.sort(function (a, b) {
-        return alphabeticComparison(a.name, b.name);
+        return alphabeticComparison(a.value, b.value);
     });
     return { title: title, data: data };
 };

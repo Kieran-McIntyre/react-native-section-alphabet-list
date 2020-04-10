@@ -1,6 +1,6 @@
 import IData from "../interfaces/IData";
-import IPreSectionData from "../interfaces/IPreSectionData";
 import validLetters from "./validLetters";
+import ISectionData from "../interfaces/ISectionData";
 
 interface IAlphabetSet {
   [key: string]: IData[];
@@ -17,14 +17,14 @@ const getSectionData = (data: IData[]) => {
   return alphabetEntrySet
     .map(formatEntry)
     .sort(sortSectionsAlphabetically)
-    .map((section: IPreSectionData, index: number) => ({ ...section, index }));
+    .map((section: ISectionData, index: number) => ({ ...section, index }));
 };
 
 const getAlphabetEntrySet = (data: IData[]) => {
   const alphabetSet: IAlphabetSet = {};
 
   data.forEach((item) => {
-    const letter = getItemFirstLetter(item.name);
+    const letter = getItemFirstLetter(item.value);
 
     if (!letter) {
       return;
@@ -55,7 +55,7 @@ const formatEntry = (entry: [string, any[]]) => {
   const [title, unsortedData] = entry;
 
   const data = unsortedData.sort((a, b) =>
-    alphabeticComparison(a.name, b.name)
+    alphabeticComparison(a.value, b.value)
   );
 
   return { title, data } as IEntry;

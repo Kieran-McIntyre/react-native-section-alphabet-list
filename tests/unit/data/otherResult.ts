@@ -1,17 +1,22 @@
 const exampleResult = [
   {
     title: "A",
-    data: [{ name: "AA" }, { name: "AB" }, { name: "ABBC" }, { name: "AC" }],
+    data: [
+      { value: "AA" },
+      { value: "AB" },
+      { value: "ABBC" },
+      { value: "AC" },
+    ],
     index: 0,
   },
   {
     title: "B",
-    data: [{ name: "BAB" }, { name: "BBA" }],
+    data: [{ value: "BAB" }, { value: "BBA" }],
     index: 1,
   },
   {
     title: "D",
-    data: [{ name: "dadd" }, { name: "DHK" }, { name: "DIK" }],
+    data: [{ value: "dadd" }, { value: "DHK" }, { value: "DIK" }],
     index: 2,
   },
 ];
