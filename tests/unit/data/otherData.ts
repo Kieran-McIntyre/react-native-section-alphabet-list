@@ -1,13 +1,13 @@
 const otherData = [
-  { value: "AA" },
-  { value: "dadd" },
-  { value: "ABBC" },
-  { value: "AB" },
-  { value: "BAB" },
-  { value: "DHK" },
-  { value: "BBA" },
-  { value: "DIK" },
-  { value: "AC" },
+  { value: "AA", key: "AA" },
+  { value: "dadd", key: "dadd" },
+  { value: "ABBC", key: "ABBC" },
+  { value: "AB", key: "AB" },
+  { value: "BAB", key: "BAB" },
+  { value: "DHK", key: "DHK" },
+  { value: "BBA", key: "BBA" },
+  { value: "DIK", key: "DIK" },
+  { value: "AC", key: "AC" },
 ];
 
 export default otherData;

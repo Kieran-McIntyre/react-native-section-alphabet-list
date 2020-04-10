@@ -6,15 +6,9 @@ interface Props {
   style?: any;
   renderItem?: (item: IData) => JSX.Element;
   renderSectionHeader?: (section: any) => JSX.Element;
-  onLoadMoreItems?: Function;
+  onLoadMoreItems?: () => void;
 
-  getItemHeight?: ({
-    sectionIndex,
-    rowIndex,
-  }: {
-    sectionIndex: number;
-    rowIndex: number;
-  }) => number;
+  getItemHeight?: ({ sectionIndex, rowIndex }: { sectionIndex: number; rowIndex: number }) => number;
 
   sectionHeaderHeight?: number;
   indexLetterColor?: string;

@@ -40,8 +40,8 @@ const getAlphabetEntrySet = (data: IData[]) => {
   return Object.entries(alphabetSet);
 };
 
-const getItemFirstLetter = (string: string) => {
-  const firstChar: string = string.substring(0, 1);
+const getItemFirstLetter = (value: string) => {
+  const firstChar: string = value.substring(0, 1);
   const isValidLetter: boolean = validLetters[firstChar.toLowerCase()];
 
   if (isValidLetter) {
@@ -54,9 +54,7 @@ const getItemFirstLetter = (string: string) => {
 const formatEntry = (entry: [string, any[]]) => {
   const [title, unsortedData] = entry;
 
-  const data = unsortedData.sort((a, b) =>
-    alphabeticComparison(a.value, b.value)
-  );
+  const data = unsortedData.sort((a, b) => alphabeticComparison(a.value, b.value));
 
   return { title, data } as IEntry;
 };
