@@ -4,7 +4,7 @@ import ISectionData from "../interfaces/ISectionData";
 import styles from "../styles/ListLetterIndexStyle";
 
 export interface Props {
-  onPressLetter: Function;
+  onPressLetter: (sectionIndex: number) => void;
   sectionData: ISectionData[];
   indexLetterColor?: string;
 }

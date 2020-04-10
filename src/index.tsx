@@ -55,6 +55,10 @@ export default class AlphabetListView extends React.PureComponent<
   };
 
   private onScrollToSection = (sectionIndex: number) => {
+    if (!this.sectionList) {
+      return;
+    }
+
     this.sectionList.scrollToLocation({
       sectionIndex,
       itemIndex: 0,
@@ -68,28 +72,6 @@ export default class AlphabetListView extends React.PureComponent<
 
     this.sectionList = sectionList;
   };
-
-  render() {
-    return (
-      <View style={[styles.container, this.props.style]}>
-        <SectionList
-          {...this.props}
-          ref={this.onSetSectionListRef}
-          sections={this.state.sectionData}
-          keyExtractor={(item: IData) => item.key}
-          renderItem={this.onRenderItem}
-          renderSectionHeader={this.onRenderSectionHeader}
-          getItemLayout={this.onGetItemLayout}
-        />
-
-        <ListLetterIndex
-          sectionData={this.state.sectionData}
-          onPressLetter={this.onScrollToSection}
-          indexLetterColor={this.props.indexLetterColor}
-        />
-      </View>
-    );
-  }
 
   private onRenderItem = ({ item }: { item: IData }) => {
     const { renderItem } = this.props;
@@ -122,4 +104,26 @@ export default class AlphabetListView extends React.PureComponent<
       </View>
     );
   };
+
+  render() {
+    return (
+      <View style={[styles.container, this.props.style]}>
+        <SectionList
+          {...this.props}
+          ref={this.onSetSectionListRef}
+          sections={this.state.sectionData}
+          keyExtractor={(item: IData) => item.key}
+          renderItem={this.onRenderItem}
+          renderSectionHeader={this.onRenderSectionHeader}
+          getItemLayout={this.onGetItemLayout}
+        />
+
+        <ListLetterIndex
+          sectionData={this.state.sectionData}
+          onPressLetter={this.onScrollToSection}
+          indexLetterColor={this.props.indexLetterColor}
+        />
+      </View>
+    );
+  }
 }
