@@ -1,0 +1,41 @@
+{
+  "name": "react-native-alphabet-list",
+  "version": "1.0.0",
+  "description": "TODO",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "rm -rf dist && tsc",
+    "build:example": "npm run build && cd example && npm run clean:modules && cd .."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github_account/react-native-alphabet-list.git",
+    "baseUrl": "https://github.com/github_account/react-native-alphabet-list"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": {
+    "name": "Kieran McIntyre",
+    "email": "k.mcintyre98@outlook.com"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/react": "^16.9.32",
+    "@types/react-native": "^0.62.2",
+    "@types/react-test-renderer": "^16.9.2",
+    "jest": "^25.3.0",
+    "react": "^16.9.0",
+    "react-native": "^0.61.5",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  }
+}

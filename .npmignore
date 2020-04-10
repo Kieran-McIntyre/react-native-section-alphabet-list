@@ -1,0 +1,6 @@
+example
+node_modules
+src
+tests
+jestconfig.json
+tsconfig.json
