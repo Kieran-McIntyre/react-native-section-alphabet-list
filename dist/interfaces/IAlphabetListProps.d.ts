@@ -5,8 +5,8 @@ interface Props {
     style?: any;
     renderItem?: (item: IData) => JSX.Element;
     renderSectionHeader?: (section: any) => JSX.Element;
-    onLoadMoreItems?: Function;
-    getItemHeight?: ({ sectionIndex, rowIndex, }: {
+    onLoadMoreItems?: () => void;
+    getItemHeight?: ({ sectionIndex, rowIndex }: {
         sectionIndex: number;
         rowIndex: number;
     }) => number;

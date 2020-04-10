@@ -9,9 +9,7 @@ import IAlphabetListProps from "./interfaces/IAlphabetListProps";
 import styles from "./styles/AlphabetListStyle";
 import sizes from "./values/sizes";
 
-export default class AlphabetListView extends React.PureComponent<
-  IAlphabetListProps
-> {
+export default class AlphabetListView extends React.PureComponent<IAlphabetListProps> {
   state: {
     sectionData: ISectionData[];
   } = {
@@ -24,13 +22,10 @@ export default class AlphabetListView extends React.PureComponent<
   constructor(props: IAlphabetListProps) {
     super(props);
 
-    const {
-      getItemHeight: onGetItemHeight = () => sizes.itemHeight,
-      sectionHeaderHeight = sizes.itemHeight,
-    } = props;
+    const { getItemHeight: onGetItemHeight = () => sizes.itemHeight, sectionHeaderHeight = sizes.itemHeight } = props;
 
     this.onGetItemLayout = sectionListGetItemLayout({
-      getItemHeight: (_, sectionIndex: number, rowIndex: number) =>
+      getItemHeight: (_rowData: any, sectionIndex: number, rowIndex: number) =>
         onGetItemHeight({ sectionIndex, rowIndex }),
       getSectionHeaderHeight: () => sectionHeaderHeight,
       getSectionFooterHeight: () => 0,
@@ -87,11 +82,7 @@ export default class AlphabetListView extends React.PureComponent<
     );
   };
 
-  private onRenderSectionHeader = ({
-    section,
-  }: {
-    section: SectionListData<IData>;
-  }) => {
+  private onRenderSectionHeader = ({ section }: { section: SectionListData<IData> }) => {
     const { renderSectionHeader } = this.props;
 
     if (renderSectionHeader) {

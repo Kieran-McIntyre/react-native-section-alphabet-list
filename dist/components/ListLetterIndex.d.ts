@@ -1,7 +1,7 @@
 import * as React from "react";
 import ISectionData from "../interfaces/ISectionData";
 export interface Props {
-    onPressLetter: Function;
+    onPressLetter: (sectionIndex: number) => void;
     sectionData: ISectionData[];
     indexLetterColor?: string;
 }

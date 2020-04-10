@@ -51,5 +51,8 @@
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "react-native-section-list-get-item-layout": "^2.2.3"
   }
 }

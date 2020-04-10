@@ -43,6 +43,9 @@ var AlphabetListView = /** @class */ (function (_super) {
             _this.setState({ sectionData: sectionData });
         };
         _this.onScrollToSection = function (sectionIndex) {
+            if (!_this.sectionList) {
+                return;
+            }
             _this.sectionList.scrollToLocation({
                 sectionIndex: sectionIndex,
                 itemIndex: 0,

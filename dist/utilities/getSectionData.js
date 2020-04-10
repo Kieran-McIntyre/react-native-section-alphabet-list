@@ -36,8 +36,8 @@ var getAlphabetEntrySet = function (data) {
     });
     return Object.entries(alphabetSet);
 };
-var getItemFirstLetter = function (string) {
-    var firstChar = string.substring(0, 1);
+var getItemFirstLetter = function (value) {
+    var firstChar = value.substring(0, 1);
     var isValidLetter = validLetters_1.default[firstChar.toLowerCase()];
     if (isValidLetter) {
         return firstChar.toUpperCase();
@@ -46,9 +46,7 @@ var getItemFirstLetter = function (string) {
 };
 var formatEntry = function (entry) {
     var title = entry[0], unsortedData = entry[1];
-    var data = unsortedData.sort(function (a, b) {
-        return alphabeticComparison(a.value, b.value);
-    });
+    var data = unsortedData.sort(function (a, b) { return alphabeticComparison(a.value, b.value); });
     return { title: title, data: data };
 };
 var sortSectionsAlphabetically = function (a, b) {

@@ -14,7 +14,7 @@ export default class AlphabetListView extends React.PureComponent<IAlphabetListP
     private setSectionData;
     private onScrollToSection;
     private onSetSectionListRef;
-    render(): JSX.Element;
     private onRenderItem;
     private onRenderSectionHeader;
+    render(): JSX.Element;
 }
