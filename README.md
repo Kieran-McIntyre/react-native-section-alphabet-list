@@ -40,7 +40,7 @@ npm install react-native-section-alphabet-list
 or with yarn:
 
 ```bash
-yard add react-native-section-alphabet-list
+yarn add react-native-section-alphabet-list
 ```
 
 ## Usage
