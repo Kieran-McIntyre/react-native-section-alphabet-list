@@ -8,9 +8,8 @@
     "dist/"
   ],
   "scripts": {
-    "test:unit": "jest --config jestconfig.json",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json",
+    "test": "jest --config jest.config.js",
+    "lint": "eslint",
     "build": "rm -rf dist && tsc",
     "build:example": "npm run build && cd example && npm run clean:modules && cd ..",
     "prepare": "npm run build",
@@ -29,7 +28,8 @@
     "SectionList",
     "letters",
     "address",
-    "addressbook"
+    "addressbook",
+    "custom"
   ],
   "author": {
     "name": "Kieran McIntyre",
@@ -39,17 +39,16 @@
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "devDependencies": {
+    "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^25.2.1",
     "@types/react": "^16.9.32",
     "@types/react-native": "^0.62.2",
     "@types/react-test-renderer": "^16.9.2",
     "jest": "^25.3.0",
-    "prettier": "^2.0.4",
     "react": "^16.9.0",
     "react-native": "^0.61.5",
     "ts-jest": "^25.3.1",
     "tslint": "^6.1.1",
-    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "allowJs": true,
+    "allowJs": false,
     "esModuleInterop": true,
     "target": "es5",
     "module": "commonjs",
@@ -9,15 +9,16 @@
     "strict": true,
     "jsx": "react-native",
     "moduleResolution": "node",
-    "lib": ["esnext", "esnext.asynciterable"]
+    "lib": [
+      "esnext",
+      "esnext.asynciterable"
+    ]
   },
-
+  "include": [
+    "./src"
+  ],
   "exclude": [
-    "node_modules",
-    "babel.config.js",
-    "metro.config.js",
-    "jest.config.js",
-    "example",
-    "tests"
+    "**/*.test.ts",
+    "**/*.test.tsx",
   ]
 }

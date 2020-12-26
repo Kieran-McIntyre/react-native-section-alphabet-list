@@ -1,4 +1,4 @@
-const sizes = {
+export const sizes = {
   itemHeight: 40,
   headerHeight: 30,
 
@@ -9,4 +9,3 @@ const sizes = {
   },
 };
 
-export default sizes;

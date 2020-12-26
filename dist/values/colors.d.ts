@@ -1,4 +1,4 @@
-declare const colors: {
+export declare const colors: {
     background: {
         light: string;
         dark: string;
@@ -9,4 +9,3 @@ declare const colors: {
     };
     primary: string;
 };
-export default colors;

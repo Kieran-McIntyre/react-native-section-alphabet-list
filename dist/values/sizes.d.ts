@@ -1,4 +1,4 @@
-declare const sizes: {
+export declare const sizes: {
     itemHeight: number;
     headerHeight: number;
     spacing: {
@@ -7,4 +7,3 @@ declare const sizes: {
         large: number;
     };
 };
-export default sizes;

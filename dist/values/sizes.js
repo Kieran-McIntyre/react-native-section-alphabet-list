@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var sizes = {
+exports.sizes = {
     itemHeight: 40,
     headerHeight: 30,
     spacing: {
@@ -9,4 +9,3 @@ var sizes = {
         large: 20,
     },
 };
-exports.default = sizes;

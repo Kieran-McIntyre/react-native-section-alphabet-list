@@ -1,10 +1,12 @@
+import { StyleSheet } from "react-native";
+
 const sizes = {
   containerWidth: 10,
   itemHeight: 15,
   itemFontSize: 10,
 };
 
-const styles: any = {
+export const styles = StyleSheet.create({
   letterIndexContainer: {
     width: sizes.containerWidth,
     height: "100%",
@@ -31,6 +33,9 @@ const styles: any = {
     fontWeight: "bold",
     color: "grey",
   },
-};
+});
 
-export default styles;
+
+
+
+

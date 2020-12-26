@@ -1,16 +1,8 @@
-import { ViewStyle, TextStyle } from "react-native";
-import sizes from "../values/sizes";
-import colors from "../values/colors";
+import { StyleSheet } from "react-native";
+import { sizes } from "../../values/sizes";
+import { colors } from "../../values/colors";
 
-interface Style {
-  container: ViewStyle;
-  listItemContainer: ViewStyle;
-  listItemLabel: TextStyle;
-  sectionHeaderContainer: ViewStyle;
-  sectionHeaderLabel: TextStyle;
-}
-
-const styles: Style = {
+export const styles = StyleSheet.create({
   container: {
     position: "relative",
   },
@@ -39,6 +31,4 @@ const styles: Style = {
   sectionHeaderLabel: {
     color: colors.background.light,
   },
-};
-
-export default styles;
+})

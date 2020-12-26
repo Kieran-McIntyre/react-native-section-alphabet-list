@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var colors = {
+exports.colors = {
     background: {
         light: "white",
         dark: "#8e8e93",
@@ -11,4 +11,3 @@ var colors = {
     },
     primary: "#007aff",
 };
-exports.default = colors;

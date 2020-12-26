@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import AlphabetList from 'react-native-alphabet-list';
+import React, { Component } from 'react';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { AlphabetList } from 'react-native-section-alphabet-list';
 import sampleData from './src/sampleData';
 import colors from './src/values/colors';
 import sizes from './src/values/sizes';
@@ -28,9 +28,9 @@ export default class App extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <AlphabetList
-          style={{flex: 1}}
+          style={{ flex: 1 }}
           data={sampleData}
-          renderItem={this.renderListItem}
+          renderCell={this.renderListItem}
           renderSectionHeader={this.renderSectionHeader}
           getItemHeight={() => sizes.itemHeight}
           sectionHeaderHeight={sizes.headerHeight}
