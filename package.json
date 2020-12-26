@@ -1,6 +1,6 @@
 {
   "name": "react-native-section-alphabet-list",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A simple React Native component that takes an array of data and renders a SectionList with alphabetically sorted data.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,8 +13,7 @@
     "build": "rm -rf dist && tsc",
     "build:example": "npm run build && cd example && npm run clean:modules && cd ..",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run test:unit && npm run lint",
-    "preversion": "npm run lint",
+    "prepublishOnly": "npm run test",
     "postversion": "git push && git push --tags"
   },
   "repository": {

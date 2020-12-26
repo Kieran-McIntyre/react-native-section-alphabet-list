@@ -17,8 +17,7 @@ export interface AlphabetListProps extends Partial<SectionListProps<IData>> {
   style?: ViewStyle;
   renderCustomItem?: (item: IData) => JSX.Element;
   renderCustomSectionHeader?: (section: SectionListData<IData>) => JSX.Element;
-  onLoadMoreItems?: () => void;
-  getItemHeight?: ({ sectionIndex, rowIndex }: { sectionIndex: number; rowIndex: number }) => number;
+  getItemHeight?: (sectionIndex: number, rowIndex: number) => number;
   sectionHeaderHeight?: number;
   indexLetterColor?: string;
 }

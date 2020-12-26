@@ -2,7 +2,7 @@
 
 A simple React Native component that takes an array of data and renders a SectionList with alphabetically (or custom) sorted data.
 
-![Alt text](https://media.giphy.com/media/SACshMzMIP2NvP8rvY/giphy.gif)
+![AlphabetList](https://media.giphy.com/media/SACshMzMIP2NvP8rvY/giphy.gif)
 
 ## Motivation
 
@@ -45,54 +45,78 @@ yard add react-native-section-alphabet-list
 
 ## Basic Usage
 
-### Import the module
-
 ```javascript
 import { AlphabetList } from "react-native-section-alphabet-list";
+
+const data = [
+  { value: 'Lillie-Mai Allen', key: 'lCUTs2' },
+  { value: 'Emmanuel Goldstein', key: 'TXdL0c' },
+  { value: 'Winston Smith', key: 'zqsiEw' },
+  { value: 'William Blazkowicz', key: 'psg2PM' },
+  { value: 'Gordon Comstock', key: '1K6I18' },
+  { value: 'Philip Ravelston', key: 'NVHSkA' },
+  { value: 'Rosemary Waterlow', key: 'SaHqyG' },
+  { value: 'Julia Comstock', key: 'iaT1Ex' },
+  { value: 'Mihai Maldonado', key: 'OvMd5e' },
+  { value: 'Murtaza Molina', key: '25zqAO' },
+  { value: 'Peter Petigrew', key: '8cWuu3' },
+]
+
+render() {
+  return (
+    <AlphabetList
+      data={data}
+      indexLetterColor={'blue'}
+      renderCustomItem={(item) => (
+        <View style={styles.listItemContainer}>
+          <Text style={styles.listItemLabel}>{item.value}</Text>
+        </View>
+      )}
+      renderCustomSectionHeader={(section) => (
+        <View style={styles.sectionHeaderContainer}>
+          <Text style={styles.sectionHeaderLabel}>{section.title}</Text>
+        </View>
+      )}
+    />
+  )
+}
 ```
 
-### Use the component
+## API
 
-## Custom Alphabet
+### Props
 
-You can provide an array of characters to the component using the `letterMap` prop. For example, if we wanted to sort alphabetically in-reverse, we could do:
+| Prop | Description | Type | Signature (func) | Default |
+| --- | --- | --- | --- | --- |
+| `data` | List of objects to be sorted and rendered in the `SectionList`. Each item must have both a `value` property and unique a `key` property. | `array` | | |
+| `letterMap` (optional) | The characters used to sort each item into sections. These characters are rendered on the right-hand side and clicking on each item scrolls the user to its respective section. The default is the letters of the alphabet. | `array` | | `['a', 'b', 'c', 'd', 'e', 'f', ...]` (see `DEFAULT_LETTER_MAP` [here](https://github.com/Kieran-McIntyre/react-native-section-alphabet-list/tree/master/src/values/consts))|
+| `renderCustomItem` (optional) | Render a row in the SectionList. Should return a valid React Element. | `func` | `{ item: { value: string, key: string } } : ReactElement` | |
+| `renderCustomSectionHeader` (optional) | Render a section header in the SectionList. Should return a valid React Element. | `func` | `{ section: { title: string, index: number, data: array } } : ReactElement` | |
+| `getItemHeight` (optional) | For [`sectionListGetItemLayout`](https://www.npmjs.com/package/react-native-section-list-get-item-layout). This may be necessary if each item has a dynamic height. This allows for smooth scrolling and accurate positioning when scrolling to a section.  | `func` | `{ sectionIndex: number, rowIndex: number } : number`  | |
+| `sectionHeaderHeight` (optional) | The height of the section header. | `number` | | `40` |
+| `indexLetterColor` (optional) | Changes the colour of each character in the letter index.  | `string` | | `#007aff` |
+
+You can also provide any valid `SectionList` props. A list of available props can be found [here](https://reactnative.dev/docs/sectionlist#props).
+
+### Custom `letterMap`
+
+You can provide a custom array of characters to the component using the `letterMap` prop. For example, if we wanted to sort alphabetically in-reverse, we could do:
 
 ```javascript
 const customLetterMap = [
-  "Z",
-  "Y",
-  "X",
+  'z',
+  'y',
+  'x',
+  'w',
   ...
 ]
 
 <AlphabetList
-  letterMap={customLetterMap}
   ...
+  letterMap={customLetterMap}
 />
 ```
 
-
-The result is:
-
-![Alt text](https://media.giphy.com/media/SACshMzMIP2NvP8rvY/giphy.gif)
-
-Or if we wanted to sort by numbers, we could do:
-
-```javascript
-const customLetterMap = [
-  "1",
-  "2",
-  "3",
-]
-
-<AlphabetList
-  letterMap={customLetterMap}
-  ...
-/>
-```
-The result is:
-
-![Alt text](https://media.giphy.com/media/SACshMzMIP2NvP8rvY/giphy.gif)
 
 ## Contributing
 

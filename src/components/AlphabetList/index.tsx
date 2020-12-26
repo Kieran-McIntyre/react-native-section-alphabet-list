@@ -39,7 +39,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = ({
 
   const onGetItemLayout: any = sectionListGetItemLayout({
     getItemHeight: (_rowData, sectionIndex: number, rowIndex: number) => {
-      return onGetItemHeight({ sectionIndex, rowIndex })
+      return onGetItemHeight(sectionIndex, rowIndex)
     },
     getSectionHeaderHeight: () => sectionHeaderHeight,
     getSectionFooterHeight: () => 0,
