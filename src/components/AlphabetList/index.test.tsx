@@ -45,7 +45,7 @@ describe('AlphabetList', () => {
     it('should render custom cell', () => {
         // Arrange.
         const onRenderCell = () => <View testID="customCell" />
-        const { getAllByTestId, queryAllByTestId } = render(<AlphabetList data={data} renderCell={onRenderCell} />)
+        const { getAllByTestId, queryAllByTestId } = render(<AlphabetList data={data} renderCustomItem={onRenderCell} />)
         const cellElements = queryAllByTestId('cell');
         const customCellElements = getAllByTestId('customCell');
 
@@ -57,7 +57,7 @@ describe('AlphabetList', () => {
     it('should render custom header', () => {
         // Arrange.
         const onRenderHeader = () => <View testID="customHeader" />
-        const { getAllByTestId, queryAllByTestId } = render(<AlphabetList data={data} renderSectionHeader={onRenderHeader} />)
+        const { getAllByTestId, queryAllByTestId } = render(<AlphabetList data={data} renderCustomSectionHeader={onRenderHeader} />)
         const headerElements = queryAllByTestId('header');
         const customHeaderElements = getAllByTestId('customHeader');
 

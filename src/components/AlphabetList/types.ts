@@ -1,4 +1,4 @@
-import { SectionListProps, ViewStyle } from "react-native";
+import { SectionListData, SectionListProps, ViewStyle } from "react-native";
 
 export interface IData {
   value: string;
@@ -15,8 +15,8 @@ export interface AlphabetListProps extends Partial<SectionListProps<IData>> {
   data: IData[];
   letterMap?: string[],
   style?: ViewStyle;
-  renderCell?: (item: IData) => JSX.Element;
-  renderSectionHeader?: (section: any) => JSX.Element;
+  renderCustomItem?: (item: IData) => JSX.Element;
+  renderCustomSectionHeader?: (section: SectionListData<IData>) => JSX.Element;
   onLoadMoreItems?: () => void;
   getItemHeight?: ({ sectionIndex, rowIndex }: { sectionIndex: number; rowIndex: number }) => number;
   sectionHeaderHeight?: number;

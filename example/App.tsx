@@ -30,8 +30,8 @@ export default class App extends Component {
         <AlphabetList
           style={{ flex: 1 }}
           data={sampleData}
-          renderCell={this.renderListItem}
-          renderSectionHeader={this.renderSectionHeader}
+          renderCustomItem={this.renderListItem}
+          renderCustomSectionHeader={this.renderSectionHeader}
           getItemHeight={() => sizes.itemHeight}
           sectionHeaderHeight={sizes.headerHeight}
           indexLetterColor={colors.primary}
