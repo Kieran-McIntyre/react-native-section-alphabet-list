@@ -46,11 +46,11 @@ export const AlphabetList: React.FC<AlphabetListProps> = ({
   });
 
   const onRenderSectionHeader = ({ section }: { section: SectionListData<IData> }) => {
-    if (renderSectionHeader) renderSectionHeader(section);
+    if (renderSectionHeader) return renderSectionHeader(section);
 
     return (
-      <View style={styles.sectionHeaderContainer}>
-        <Text style={styles.sectionHeaderLabel}>{section.title}</Text>
+      <View testID="header" style={styles.sectionHeaderContainer}>
+        <Text testID="header__label" style={styles.sectionHeaderLabel}>{section.title}</Text>
       </View>
     );
   };
@@ -59,8 +59,8 @@ export const AlphabetList: React.FC<AlphabetListProps> = ({
     if (renderCell) return renderCell(item);
 
     return (
-      <View style={styles.listItemContainer}>
-        <Text style={styles.listItemLabel}>{item.value}</Text>
+      <View testID="cell" style={styles.listItemContainer}>
+        <Text testID="cell__label" style={styles.listItemLabel}>{item.value}</Text>
       </View>
     );
   };

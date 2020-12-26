@@ -1,8 +1,6 @@
 import { getSectionData } from "./getSectionData";
-import countriesData from "../../fixtures/countriesData";
-import countriesResult from "../../fixtures/countriesResult";
-import randomData from "../../fixtures/otherData";
-import randomResult from "../../fixtures/otherResult";
+import { countriesData, countriesResult } from "../../fixtures/countriesData";
+import { customMapData, customMapResult } from "../../fixtures/customMapData";
 import { DEFAULT_LETTER_MAP } from "../values/consts"
 
 describe("utils - getSectionData", () => {
@@ -14,13 +12,12 @@ describe("utils - getSectionData", () => {
     expect(sectionData).toEqual(countriesResult)
   });
 
-  it("custom lettersMap > should correctly sort", () => { })
+  it("custom lettersMap > should correctly sort", () => {
+    // Arrange.
+    const customLettersMap = ["1", "2", "3", "X", "K"]
+    const sectionData = getSectionData(customMapData, customLettersMap);
 
-  // it("randomDataSet > returns data in correct format", () => {
-  //   // Arrange.
-  //   const sectionData = getSectionData(randomData, DEFAULT_LETTER_MAP);
-
-  //   // Assert.
-  //   expect(sectionData).toEqual(randomResult)
-  // });
+    // Assert.
+    expect(sectionData).toEqual(customMapResult)
+  })
 });

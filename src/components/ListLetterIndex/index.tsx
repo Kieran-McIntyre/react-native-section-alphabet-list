@@ -17,9 +17,9 @@ export const ListLetterIndex: React.FC<ListLetterIndexProps> = ({
         data={sectionData}
         keyExtractor={(i) => i.title}
         renderItem={({ item, index }) => (
-          <TouchableOpacity onPress={() => onPressLetter(index)}>
+          <TouchableOpacity testID="indexItem" onPress={() => onPressLetter(index)}>
             <View style={styles.letterIndexItem}>
-              <Text style={[styles.letterIndexLabel, labelStyle]}>{item.title}</Text>
+              <Text testID="indexItem__title" style={[styles.letterIndexLabel, labelStyle]}>{item.title}</Text>
             </View>
           </TouchableOpacity>
         )}
