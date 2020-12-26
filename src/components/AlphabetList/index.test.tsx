@@ -65,4 +65,20 @@ describe('AlphabetList', () => {
         expect(headerElements.length).toBe(0);
         expect(customHeaderElements.length).toBe(3)
     })
+
+    it('should pass props to SectionList', () => {
+        // Arrange.
+        const { getByTestId } = render(
+            <AlphabetList
+                data={data}
+                horizontal={true}
+                keyboardDismissMode="on-drag"
+            />
+        )
+        const sectionList = getByTestId("sectionList")
+
+        // Assert.
+        expect(sectionList.props.keyboardDismissMode).toBe("on-drag")
+        expect(sectionList.props.horizontal).toBe(true)
+    })
 })

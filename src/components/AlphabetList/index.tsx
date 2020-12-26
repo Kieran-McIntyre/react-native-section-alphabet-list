@@ -9,16 +9,19 @@ import { styles } from "./styles";
 import { sizes } from "../../values/sizes";
 import { DEFAULT_LETTER_MAP } from "../../values/consts"
 
-export const AlphabetList: React.FC<AlphabetListProps> = ({
-  data,
-  letterMap = DEFAULT_LETTER_MAP,
-  style,
-  indexLetterColor,
-  getItemHeight: onGetItemHeight = () => sizes.itemHeight,
-  sectionHeaderHeight = sizes.itemHeight,
-  renderCustomSectionHeader,
-  renderCustomItem,
-}) => {
+export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
+  const {
+    data,
+    letterMap = DEFAULT_LETTER_MAP,
+    style,
+    indexLetterColor,
+    getItemHeight: onGetItemHeight = () => sizes.itemHeight,
+    sectionHeaderHeight = sizes.itemHeight,
+    renderCustomSectionHeader,
+    renderCustomItem,
+    ...sectionListProps
+  } = props
+
   const sectionListRef = useRef(null);
   const [sectionData, setSectionData] = useState<ISectionData[]>([])
 
@@ -69,6 +72,8 @@ export const AlphabetList: React.FC<AlphabetListProps> = ({
   return (
     <View style={[styles.container, style]}>
       <SectionList
+        {...sectionListProps}
+        testID="sectionList"
         ref={sectionListRef}
         sections={sectionData}
         keyExtractor={(item: IData) => item.key}
