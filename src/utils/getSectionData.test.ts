@@ -1,12 +1,12 @@
 import { getSectionData } from "./getSectionData";
 import { countriesData, countriesResult } from "../../fixtures/countriesData";
 import { customMapData, customMapResult } from "../../fixtures/customMapData";
-import { DEFAULT_LETTER_MAP } from "../values/consts"
+import { DEFAULT_CHAR_INDEX } from "../values/consts"
 
 describe("utils - getSectionData", () => {
   it("countriesDataSet > returns data in correct format", () => {
     // Arrange.
-    const sectionData = getSectionData(countriesData, DEFAULT_LETTER_MAP);
+    const sectionData = getSectionData(countriesData, DEFAULT_CHAR_INDEX);
 
     // Assert.
     expect(sectionData).toEqual(countriesResult)

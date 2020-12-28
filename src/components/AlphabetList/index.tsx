@@ -7,12 +7,12 @@ import { ListLetterIndex } from "../ListLetterIndex";
 import { IData, ISectionData, AlphabetListProps } from "./types";
 import { styles } from "./styles";
 import { sizes } from "../../values/sizes";
-import { DEFAULT_LETTER_MAP } from "../../values/consts"
+import { DEFAULT_CHAR_INDEX } from "../../values/consts"
 
 export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
   const {
     data,
-    letterMap = DEFAULT_LETTER_MAP,
+    index = DEFAULT_CHAR_INDEX,
     style,
     indexLetterColor,
     getItemHeight: onGetItemHeight = () => sizes.itemHeight,
@@ -26,7 +26,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
   const [sectionData, setSectionData] = useState<ISectionData[]>([])
 
   useEffect(() => {
-    setSectionData(getSectionData(data, letterMap))
+    setSectionData(getSectionData(data, index))
   }, [data])
 
   const onScrollToSection = (sectionIndex: number) => {

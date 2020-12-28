@@ -13,18 +13,13 @@ interface ILetterMap {
   [key: string]: number
 }
 
-/**
- * A function that...
- * @param data 
- * @param letterMap 
- */
-export const getSectionData = (data: IData[], letterMap: string[]) => {
-  const validLettersMap = getValidLettersMap(letterMap)
+export const getSectionData = (data: IData[], charIndex: string[]) => {
+  const validLettersMap = getValidLettersMap(charIndex)
   const alphabetEntrySet: [string, IData[]][] = getAlphabetEntrySet(data, validLettersMap);
 
   return alphabetEntrySet
     .map(formatEntry)
-    .sort((a, b) => sortSectionsByLetterMap(a, b, validLettersMap))
+    .sort((a, b) => sortSectionsByCharIndex(a, b, validLettersMap))
     .map((section: ISectionData, index: number) => ({ ...section, index }));
 };
 
@@ -75,7 +70,7 @@ const formatEntry = (entry: [string, any[]]) => {
 
 const isLetterHash = (charOne: string, charTwo: string) => charOne !== "#" && charTwo === "#";
 
-const sortSectionsByLetterMap = (a: IEntry, b: IEntry, validLettersMap: ILetterMap) => {
+const sortSectionsByCharIndex = (a: IEntry, b: IEntry, validLettersMap: ILetterMap) => {
   const charA = a.title.toLowerCase()
   const charB = b.title.toLowerCase()
 

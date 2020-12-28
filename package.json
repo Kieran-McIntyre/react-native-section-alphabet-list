@@ -10,11 +10,7 @@
   "scripts": {
     "test": "jest --config jest.config.js",
     "lint": "eslint",
-    "build": "rm -rf dist && tsc",
-    "build:example": "npm run build && cd example && npm run clean:modules && cd ..",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run test",
-    "postversion": "git push && git push --tags"
+    "build": "rm -rf dist && tsc"
   },
   "repository": {
     "type": "git",

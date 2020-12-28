@@ -1,4 +1,4 @@
-export const DEFAULT_LETTER_MAP = [
+export const DEFAULT_CHAR_INDEX = [
     "a",
     "b",
     "c",
