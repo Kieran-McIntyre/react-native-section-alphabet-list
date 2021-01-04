@@ -95,6 +95,7 @@ render() {
 | `getItemHeight` (optional) | For [`sectionListGetItemLayout`](https://www.npmjs.com/package/react-native-section-list-get-item-layout). This may be necessary if each item has a dynamic height. This allows for smooth scrolling and accurate positioning when scrolling to a section.  | `func` | `{ sectionIndex: number, rowIndex: number } : number`  | |
 | `sectionHeaderHeight` (optional) | The height of the section header. | `number` | | `40` |
 | `indexLetterColor` (optional) | Changes the colour of each character in the letter index.  | `string` | | `#007aff` |
+| `uncategorizedAtTop` (optional) | If `true`, the uncategorised items (the `#` section) is moved to the top of the list.  | `boolean` | | false |
 
 You can also provide any valid `SectionList` props. A list of available props can be found [here](https://reactnative.dev/docs/sectionlist#props).
 
