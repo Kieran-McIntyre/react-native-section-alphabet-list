@@ -20,4 +20,5 @@ export interface AlphabetListProps extends Partial<SectionListProps<IData>> {
   getItemHeight?: (sectionIndex: number, rowIndex: number) => number;
   sectionHeaderHeight?: number;
   indexLetterColor?: string;
+  uncategorizedAtTop?: boolean;
 }

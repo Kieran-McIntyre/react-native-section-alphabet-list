@@ -20,4 +20,26 @@ describe("utils - getSectionData", () => {
     // Assert.
     expect(sectionData).toEqual(customMapResult)
   })
+
+  it("uncategorizedAtTop is false > uncategorized items are at bottom of list", () => {
+    // Arrange.
+    const sectionData = getSectionData(countriesData, DEFAULT_CHAR_INDEX);
+    const charStart = sectionData[0]
+    const charEnd = sectionData[sectionData.length - 1]
+
+    // Assert.
+    expect(charStart.title).toBe('A')
+    expect(charEnd.title).toBe('#')
+  })
+
+  it("uncategorizedAtTop is false > uncategorized items are at top of list", () => {
+    // Arrange.
+    const sectionData = getSectionData(countriesData, DEFAULT_CHAR_INDEX, true);
+    const charStart = sectionData[0]
+    const charEnd = sectionData[sectionData.length - 1]
+
+    // Assert.
+    expect(charStart.title).toBe('#')
+    expect(charEnd.title).toBe('Z')
+  })
 });

@@ -13,13 +13,13 @@ interface ILetterMap {
   [key: string]: number
 }
 
-export const getSectionData = (data: IData[], charIndex: string[]) => {
+export const getSectionData = (data: IData[], charIndex: string[], uncategorizedAtTop = false) => {
   const validLettersMap = getValidLettersMap(charIndex)
   const alphabetEntrySet: [string, IData[]][] = getAlphabetEntrySet(data, validLettersMap);
 
   return alphabetEntrySet
     .map(formatEntry)
-    .sort((a, b) => sortSectionsByCharIndex(a, b, validLettersMap))
+    .sort((a, b) => sortSectionsByCharIndex(a, b, validLettersMap, uncategorizedAtTop))
     .map((section: ISectionData, index: number) => ({ ...section, index }));
 };
 
@@ -70,15 +70,15 @@ const formatEntry = (entry: [string, any[]]) => {
 
 const isLetterHash = (charOne: string, charTwo: string) => charOne !== "#" && charTwo === "#";
 
-const sortSectionsByCharIndex = (a: IEntry, b: IEntry, validLettersMap: ILetterMap) => {
+const sortSectionsByCharIndex = (a: IEntry, b: IEntry, validLettersMap: ILetterMap, uncategorizedAtTop: boolean) => {
   const charA = a.title.toLowerCase()
   const charB = b.title.toLowerCase()
 
   const isBHash = isLetterHash(charA, charB)
-  if (isBHash) return -1;
+  if (isBHash) return uncategorizedAtTop ? 1 : -1;
 
   const isAHash = isLetterHash(charB, charA)
-  if (isAHash) return 1;
+  if (isAHash) return uncategorizedAtTop ? -1 : 1;
 
   const charAPosition = validLettersMap[charA]
   const charBPosition = validLettersMap[charB]

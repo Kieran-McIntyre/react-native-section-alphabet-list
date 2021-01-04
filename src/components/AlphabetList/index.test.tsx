@@ -81,4 +81,48 @@ describe('AlphabetList', () => {
         expect(sectionList.props.keyboardDismissMode).toBe("on-drag")
         expect(sectionList.props.horizontal).toBe(true)
     })
+
+    describe("uncategorised items", () => {
+        const dataWithUncategorised = [
+            { value: '€20', key: 'euro' },
+            { value: '2', key: '2' },
+            { value: 'Cauliflower', key: 'cauliflower' },
+            { value: '1', key: '1' },
+            { value: '3', key: '3' },
+            { value: 'Apple', key: 'apple' },
+            { value: '!Hola!', key: 'hola' },
+        ]
+
+        it('by default > should render uncategorised section at top', () => {
+            // Arrange.
+            const { getAllByTestId } = render(<AlphabetList data={dataWithUncategorised} uncategorizedAtTop={true} />)
+            const cellElements = getAllByTestId('cell');
+            const cellLabelElements = getAllByTestId('cell__label');
+
+            // Assert.
+            expect(cellElements.length).toBe(6);
+
+            expect(cellLabelElements[0].props.children).toBe("!Hola!");
+            expect(cellLabelElements[1].props.children).toBe("1");
+            expect(cellLabelElements[2].props.children).toBe("2");
+            expect(cellLabelElements[3].props.children).toBe("3");
+            expect(cellLabelElements[4].props.children).toBe("€20");
+            expect(cellLabelElements[5].props.children).toBe("Apple");
+            expect(cellLabelElements[6].props.children).toBe("Carrot");
+        })
+
+        it('should render headers', () => {
+            // Arrange.
+            const { getAllByTestId } = render(<AlphabetList data={dataWithUncategorised} uncategorizedAtTop={true} />)
+            const headerElements = getAllByTestId('header');
+            const headerLabelElements = getAllByTestId('header__label');
+
+            // Assert.
+            expect(headerElements.length).toBe(3);
+
+            expect(headerLabelElements[0].props.children).toBe("#");
+            expect(headerLabelElements[1].props.children).toBe("A");
+            expect(headerLabelElements[2].props.children).toBe("C");
+        })
+    })
 })

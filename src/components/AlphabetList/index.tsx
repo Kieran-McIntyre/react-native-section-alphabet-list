@@ -17,6 +17,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
     indexLetterColor,
     getItemHeight: onGetItemHeight = () => sizes.itemHeight,
     sectionHeaderHeight = sizes.itemHeight,
+    uncategorizedAtTop = false,
     renderCustomSectionHeader,
     renderCustomItem,
     ...sectionListProps
@@ -26,7 +27,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
   const [sectionData, setSectionData] = useState<ISectionData[]>([])
 
   useEffect(() => {
-    setSectionData(getSectionData(data, index))
+    setSectionData(getSectionData(data, index, uncategorizedAtTop))
   }, [data])
 
   const onScrollToSection = (sectionIndex: number) => {
