@@ -24,6 +24,14 @@ export default class App extends Component {
     );
   };
 
+  renderCustomListHeader = () => {
+    return (
+      <View style={styles.listHeaderContainer}>
+        <Text>List Header</Text>
+      </View>
+    );
+  };
+
   render() {
     return (
       <SafeAreaView style={styles.container}>
@@ -32,8 +40,10 @@ export default class App extends Component {
           data={sampleData}
           renderCustomItem={this.renderListItem}
           renderCustomSectionHeader={this.renderSectionHeader}
+          renderCustomListHeader={this.renderCustomListHeader}
           getItemHeight={() => sizes.itemHeight}
           sectionHeaderHeight={sizes.headerHeight}
+          listHeaderHeight={sizes.listHeaderHeight}
           indexLetterColor={colors.primary}
         />
       </SafeAreaView>
@@ -71,4 +81,11 @@ const styles = StyleSheet.create({
   sectionHeaderLabel: {
     color: colors.background.light,
   },
+
+  listHeaderContainer: {
+    height: sizes.listHeaderHeight,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 });

@@ -17,9 +17,11 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
     indexLetterColor,
     getItemHeight: onGetItemHeight = () => sizes.itemHeight,
     sectionHeaderHeight = sizes.itemHeight,
+    listHeaderHeight = sizes.listHeaderHeight,
     uncategorizedAtTop = false,
     renderCustomSectionHeader,
     renderCustomItem,
+    renderCustomListHeader,
     ...sectionListProps
   } = props
 
@@ -47,6 +49,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
     },
     getSectionHeaderHeight: () => sectionHeaderHeight,
     getSectionFooterHeight: () => 0,
+    listHeaderHeight,
   });
 
   const onRenderSectionHeader = ({ section }: { section: SectionListData<IData> }) => {
@@ -80,6 +83,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
         keyExtractor={(item: IData) => item.key}
         renderItem={onRenderItem}
         renderSectionHeader={onRenderSectionHeader}
+        ListHeaderComponent={renderCustomListHeader}
         getItemLayout={onGetItemLayout}
       />
 
