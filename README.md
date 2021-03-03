@@ -92,8 +92,10 @@ render() {
 | `index` (optional) | The characters used to sort each item into sections. These characters are rendered on the right-hand side and clicking on each item scrolls the user to its respective section. The default is the letters of the alphabet. | `array` | | `['a', 'b', 'c', 'd', 'e', 'f', ...]` (see `DEFAULT_CHAR_INDEX` [here](https://github.com/Kieran-McIntyre/react-native-section-alphabet-list/blob/master/src/values/consts.ts))|
 | `renderCustomItem` (optional) | Render a row in the SectionList. Should return a valid React Element. | `func` | `{ item: { value: string, key: string } } : ReactElement` | |
 | `renderCustomSectionHeader` (optional) | Render a section header in the SectionList. Should return a valid React Element. | `func` | `{ section: { title: string, index: number, data: array } } : ReactElement` | |
+| `renderCustomListHeader` (optional) | Render a list header in the SectionList. Should return a valid React Element. | `func` | | |
 | `getItemHeight` (optional) | For [`sectionListGetItemLayout`](https://www.npmjs.com/package/react-native-section-list-get-item-layout). This may be necessary if each item has a dynamic height. This allows for smooth scrolling and accurate positioning when scrolling to a section.  | `func` | `{ sectionIndex: number, rowIndex: number } : number`  | |
 | `sectionHeaderHeight` (optional) | The height of the section header. | `number` | | `40` |
+| `listHeaderHeight` (optional) | The height of the list header. | `number` | | `0` |
 | `indexLetterColor` (optional) | Changes the colour of each character in the letter index.  | `string` | | `#007aff` |
 | `uncategorizedAtTop` (optional) | If `true`, the uncategorised items (the `#` section) is moved to the top of the list.  | `boolean` | | false |
 

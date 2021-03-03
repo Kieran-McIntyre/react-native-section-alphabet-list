@@ -1,6 +1,7 @@
 export const sizes = {
   itemHeight: 40,
   headerHeight: 30,
+  listHeaderHeight: 0,
 
   spacing: {
     small: 10,
