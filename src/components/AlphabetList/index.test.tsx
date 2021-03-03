@@ -66,6 +66,16 @@ describe('AlphabetList', () => {
         expect(customHeaderElements.length).toBe(3)
     })
 
+    it('should render custom list header', () => {
+        // Arrange.
+        const onRenderListHeader = () => <View testID="customListHeader" />
+        const { getByTestId } = render(<AlphabetList data={data} renderCustomListHeader={onRenderListHeader} />)
+        const customListHeaderElement = getByTestId('customListHeader');
+
+        // Assert.
+        expect(customListHeaderElement).toBeDefined();
+    })
+
     it('should pass props to SectionList', () => {
         // Arrange.
         const { getByTestId } = render(
