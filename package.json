@@ -1,6 +1,6 @@
 {
   "name": "react-native-section-alphabet-list",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "A simple React Native component that takes an array of data and renders a SectionList with alphabetically sorted data.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
