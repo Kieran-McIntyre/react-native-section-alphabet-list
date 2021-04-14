@@ -66,7 +66,10 @@ render() {
   return (
     <AlphabetList
       data={data}
-      indexLetterColor={'blue'}
+      indexLetterStyle={{ 
+        color: 'blue', 
+        fontSize: 15,
+      }}
       renderCustomItem={(item) => (
         <View style={styles.listItemContainer}>
           <Text style={styles.listItemLabel}>{item.value}</Text>
@@ -93,10 +96,12 @@ render() {
 | `renderCustomItem` (optional) | Render a row in the SectionList. Should return a valid React Element. | `func` | `{ item: { value: string, key: string } } : ReactElement` | |
 | `renderCustomSectionHeader` (optional) | Render a section header in the SectionList. Should return a valid React Element. | `func` | `{ section: { title: string, index: number, data: array } } : ReactElement` | |
 | `renderCustomListHeader` (optional) | Render a list header in the SectionList. Should return a valid React Element. | `func` | | |
+| `renderCustomIndexLetter` (optional) | Render a custom index letter element. Should return a valid React Element. | `func` | `{ item: { title: string, index: number, data: array }, index: number, onPress: func } : ReactElement` | |
 | `getItemHeight` (optional) | For [`sectionListGetItemLayout`](https://www.npmjs.com/package/react-native-section-list-get-item-layout). This may be necessary if each item has a dynamic height. This allows for smooth scrolling and accurate positioning when scrolling to a section.  | `func` | `{ sectionIndex: number, rowIndex: number } : number`  | |
 | `sectionHeaderHeight` (optional) | The height of the section header. | `number` | | `40` |
 | `listHeaderHeight` (optional) | The height of the list header. | `number` | | `0` |
-| `indexLetterColor` (optional) | Changes the colour of each character in the letter index.  | `string` | | `#007aff` |
+| `indexLetterStyle` (optional) | Override the style of the list letter index text.  | `object` | | `undefined` |
+| `indexLetterContainerStyle` (optional) | Override the style of the list letter index container.  | `object` | | `undefined` |
 | `uncategorizedAtTop` (optional) | If `true`, the uncategorised items (the `#` section) is moved to the top of the list.  | `boolean` | | false |
 
 You can also provide any valid `SectionList` props. A list of available props can be found [here](https://reactnative.dev/docs/sectionlist#props).

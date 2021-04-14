@@ -1,7 +1,9 @@
-import { ISectionData } from "../AlphabetList/types"
+import { AlphabetListProps, ISectionData } from "../AlphabetList/types"
 
 export interface ListLetterIndexProps {
     onPressLetter: (sectionIndex: number) => void;
     sectionData: ISectionData[];
-    indexLetterColor?: string;
+    indexLetterStyle?: AlphabetListProps["indexLetterStyle"],
+    indexLetterContainerStyle?: AlphabetListProps["indexLetterContainerStyle"],
+    renderCustomIndexLetter?: AlphabetListProps["renderCustomIndexLetter"],
 }
