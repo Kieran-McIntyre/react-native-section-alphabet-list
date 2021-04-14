@@ -44,7 +44,7 @@ export default class App extends Component {
           getItemHeight={() => sizes.itemHeight}
           sectionHeaderHeight={sizes.headerHeight}
           listHeaderHeight={sizes.listHeaderHeight}
-          indexLetterColor={colors.primary}
+          indexLetterStyle={{ color: colors.primary }}
         />
       </SafeAreaView>
     );
