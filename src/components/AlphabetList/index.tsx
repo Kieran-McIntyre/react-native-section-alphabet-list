@@ -14,6 +14,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
     data,
     index = DEFAULT_CHAR_INDEX,
     style,
+    indexContainerStyle,
     indexLetterStyle,
     indexLetterContainerStyle,
     getItemHeight: onGetItemHeight = () => sizes.itemHeight,
@@ -92,6 +93,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
       <ListLetterIndex
         sectionData={sectionData}
         onPressLetter={onScrollToSection}
+        indexContainerStyle={indexContainerStyle}
         indexLetterStyle={indexLetterStyle}
         indexLetterContainerStyle={indexLetterContainerStyle}
         renderCustomIndexLetter={renderCustomIndexLetter}

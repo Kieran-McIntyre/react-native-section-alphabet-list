@@ -7,6 +7,7 @@ import { ISectionData } from "../AlphabetList/types";
 export const ListLetterIndex: React.FC<ListLetterIndexProps> = ({
   sectionData,
   onPressLetter,
+  indexContainerStyle,
   indexLetterStyle,
   indexLetterContainerStyle,
   renderCustomIndexLetter
@@ -32,7 +33,7 @@ export const ListLetterIndex: React.FC<ListLetterIndexProps> = ({
   };
 
   return (
-    <View style={styles.letterIndexContainer}>
+    <View style={[styles.letterIndexContainer, indexContainerStyle]}>
       <FlatList
         contentContainerStyle={styles.letterIndexList}
         data={sectionData}
