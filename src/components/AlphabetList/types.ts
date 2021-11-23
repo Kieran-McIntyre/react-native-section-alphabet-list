@@ -1,4 +1,4 @@
-import { SectionListData, SectionListProps, TextStyle, ViewStyle } from "react-native";
+import { SectionListData, SectionListProps, TextStyle, ViewStyle, CSSProperties } from "react-native";
 
 export interface IData {
   value: string;
@@ -23,6 +23,7 @@ export interface AlphabetListProps extends Partial<SectionListProps<IData>> {
   indexLetterStyle?: TextStyle,
   indexLetterContainerStyle?: ViewStyle,
   indexContainerStyle?: ViewStyle,
+  letterListContainerStyle: CSSProperties,
   renderCustomItem?: (item: IData) => JSX.Element;
   renderCustomSectionHeader?: (section: SectionListData<IData>) => JSX.Element;
   renderCustomListHeader?: () => JSX.Element;
