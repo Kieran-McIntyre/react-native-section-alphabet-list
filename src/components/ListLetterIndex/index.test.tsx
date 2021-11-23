@@ -153,6 +153,34 @@ describe('ListLetterIndex', () => {
         // Assert.
         expect(indexItemLabelElements[0].props.style).toEqual(expectedStyle)
     })
+    it('letterListContainerStyle > should apply custom style', () => {
+        // Arrange.
+        const letterListContainerStyle = {
+            alignItems: "flex-start",
+        }
 
+        const expectedStyle = [
+            {
+                alignItems: "center",
+                justifyContent: "center",
+                height: '100%',
+            },
+            {
+                alignItems: "flex-start"
+            }
+        ]
+
+        const { getAllByTestId } = render(
+            <ListLetterIndex
+                sectionData={sectionData}
+                onPressLetter={mockPressLetterFn}
+                letterListContainerStyle={letterListContainerStyle}
+            />
+        )
+
+        const flatList = getAllByTestId("flatList");
+        // Assert.
+        expect(flatList[0].props.contentContainerStyle).toEqual(expectedStyle)
+    })
 
 })
