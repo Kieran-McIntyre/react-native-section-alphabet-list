@@ -25,6 +25,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
     renderCustomItem,
     renderCustomListHeader,
     renderCustomIndexLetter,
+    letterListContainerStyle
     ...sectionListProps
   } = props
 
@@ -97,6 +98,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
         indexLetterStyle={indexLetterStyle}
         indexLetterContainerStyle={indexLetterContainerStyle}
         renderCustomIndexLetter={renderCustomIndexLetter}
+        letterListContainerStyle={letterListContainerStyle}
       />
     </View>
   );
