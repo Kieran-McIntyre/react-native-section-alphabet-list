@@ -100,6 +100,7 @@ render() {
 | `getItemHeight` (optional) | For [`sectionListGetItemLayout`](https://www.npmjs.com/package/react-native-section-list-get-item-layout). This may be necessary if each item has a dynamic height. This allows for smooth scrolling and accurate positioning when scrolling to a section.  | `func` | `{ sectionIndex: number, rowIndex: number } : number`  | |
 | `sectionHeaderHeight` (optional) | The height of the section header. | `number` | | `40` |
 | `listHeaderHeight` (optional) | The height of the list header. | `number` | | `0` |
+| `letterListContainerStyle` (optional) | Override the style of the letter list container.  | `object` | | `undefined` |
 | `indexContainerStyle` (optional) | Override the style of the list index container.  | `object` | | `undefined` |
 | `indexLetterStyle` (optional) | Override the style of the list letter index text.  | `object` | | `undefined` |
 | `indexLetterContainerStyle` (optional) | Override the style of the list letter index container.  | `object` | | `undefined` |

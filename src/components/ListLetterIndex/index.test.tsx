@@ -1,7 +1,7 @@
 import React from 'react';
 import { ListLetterIndex } from "."
 import { render, fireEvent } from '@testing-library/react-native';
-import { View, Text } from "react-native"
+import { View, Text, ViewStyle } from "react-native"
 
 describe('ListLetterIndex', () => {
     const mockPressLetterFn = jest.fn()
@@ -156,7 +156,7 @@ describe('ListLetterIndex', () => {
 
     it('letterListContainerStyle > should apply custom style', () => {
         // Arrange.
-        const letterListContainerStyle = {
+        const letterListContainerStyle : ViewStyle = {
             alignItems: "flex-start",
         }
 
@@ -164,7 +164,7 @@ describe('ListLetterIndex', () => {
             {
                 alignItems: "center",
                 justifyContent: "center",
-                height: '100%',
+                height: "100%",
             },
             {
                 alignItems: "flex-start"
@@ -180,7 +180,7 @@ describe('ListLetterIndex', () => {
         )
 
         const flatList = getAllByTestId("flatList");
-      
+
           // Assert.
         expect(flatList[0].props.contentContainerStyle).toEqual(expectedStyle)
     })
