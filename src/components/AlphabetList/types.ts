@@ -1,4 +1,4 @@
-import { SectionListData, SectionListProps, TextStyle, ViewStyle, CSSProperties } from "react-native";
+import { SectionListData, SectionListProps, TextStyle, ViewStyle } from "react-native";
 
 export interface IData {
   value: string;
