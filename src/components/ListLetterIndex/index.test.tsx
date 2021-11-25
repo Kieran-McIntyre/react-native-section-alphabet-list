@@ -181,7 +181,7 @@ describe('ListLetterIndex', () => {
 
         const flatList = getAllByTestId("flatList");
 
-          // Assert.
+        // Assert.
         expect(flatList[0].props.contentContainerStyle).toEqual(expectedStyle)
     })
 
