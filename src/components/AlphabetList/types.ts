@@ -23,7 +23,7 @@ export interface AlphabetListProps extends Partial<SectionListProps<IData>> {
   indexLetterStyle?: TextStyle,
   indexLetterContainerStyle?: ViewStyle,
   indexContainerStyle?: ViewStyle,
-  letterListContainerStyle?: CSSProperties,
+  letterListContainerStyle?: ViewStyle,
   renderCustomItem?: (item: IData) => JSX.Element;
   renderCustomSectionHeader?: (section: SectionListData<IData>) => JSX.Element;
   renderCustomListHeader?: () => JSX.Element;
