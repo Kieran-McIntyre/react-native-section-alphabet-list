@@ -153,6 +153,7 @@ describe('ListLetterIndex', () => {
         // Assert.
         expect(indexItemLabelElements[0].props.style).toEqual(expectedStyle)
     })
+
     it('letterListContainerStyle > should apply custom style', () => {
         // Arrange.
         const letterListContainerStyle = {
