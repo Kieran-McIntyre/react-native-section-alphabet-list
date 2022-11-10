@@ -1,14 +1,29 @@
-import React, { Component } from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * Generated with the TypeScript template
+ * https://github.com/react-native-community/react-native-template-typescript
+ *
+ * @format
+ */
+
+import React from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+
 import { AlphabetList } from 'react-native-section-alphabet-list';
-import sampleData from './src/sampleData';
-import colors from './src/values/colors';
-import sizes from './src/values/sizes';
 
-export default class App extends Component {
-  state = {};
+import { exampleData } from './src/data';
+import { colors } from './src/colors';
+import { sizes } from './src/sizes';
 
-  renderListItem = (item) => {
+const App = () => {
+  const renderListItem = (item: any) => {
     return (
       <View style={styles.listItemContainer}>
         <Text style={styles.listItemLabel}>{item.value}</Text>
@@ -16,7 +31,7 @@ export default class App extends Component {
     );
   };
 
-  renderSectionHeader = (section) => {
+  const renderSectionHeader = (section: any) => {
     return (
       <View style={styles.sectionHeaderContainer}>
         <Text style={styles.sectionHeaderLabel}>{section.title}</Text>
@@ -24,7 +39,7 @@ export default class App extends Component {
     );
   };
 
-  renderCustomListHeader = () => {
+  const renderCustomListHeader = () => {
     return (
       <View style={styles.listHeaderContainer}>
         <Text>List Header</Text>
@@ -32,23 +47,21 @@ export default class App extends Component {
     );
   };
 
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <AlphabetList
-          style={{ flex: 1 }}
-          data={sampleData}
-          renderCustomItem={this.renderListItem}
-          renderCustomSectionHeader={this.renderSectionHeader}
-          renderCustomListHeader={this.renderCustomListHeader}
-          getItemHeight={() => sizes.itemHeight}
-          sectionHeaderHeight={sizes.headerHeight}
-          listHeaderHeight={sizes.listHeaderHeight}
-          indexLetterStyle={{ color: colors.primary }}
-        />
-      </SafeAreaView>
-    );
-  }
+  return (
+    <SafeAreaView style={styles.container}>
+      <AlphabetList
+        style={{ flex: 1 }}
+        data={exampleData}
+        renderCustomItem={renderListItem}
+        renderCustomSectionHeader={renderSectionHeader}
+        renderCustomListHeader={renderCustomListHeader}
+        getItemHeight={() => sizes.itemHeight}
+        sectionHeaderHeight={sizes.headerHeight}
+        listHeaderHeight={sizes.listHeaderHeight}
+        indexLetterStyle={{ color: colors.primary }}
+      />
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -89,3 +102,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   }
 });
+
+export default App;
