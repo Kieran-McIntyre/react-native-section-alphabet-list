@@ -9,7 +9,7 @@ import { styles } from "./styles";
 import { sizes } from "../../values/sizes";
 import { DEFAULT_CHAR_INDEX } from "../../values/consts"
 
-export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
+export const AlphabetList: React.FC<AlphabetListProps<any>> = (props) => {
   const {
     data,
     index = DEFAULT_CHAR_INDEX,
@@ -30,7 +30,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
   } = props
 
   const sectionListRef = useRef(null);
-  const [sectionData, setSectionData] = useState<ISectionData[]>([])
+  const [sectionData, setSectionData] = useState<ISectionData<any>[]>([])
 
   useEffect(() => {
     setSectionData(getSectionData(data, index, uncategorizedAtTop))
@@ -56,7 +56,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
     listHeaderHeight,
   });
 
-  const onRenderSectionHeader = ({ section }: { section: SectionListData<IData> }) => {
+  const onRenderSectionHeader = ({ section }: { section: SectionListData<IData<any>> }) => {
     if (renderCustomSectionHeader) return renderCustomSectionHeader(section);
 
     return (
@@ -66,7 +66,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
     );
   };
 
-  const onRenderItem = ({ item }: { item: IData }) => {
+  const onRenderItem = ({ item }: { item: IData<any> }) => {
     if (renderCustomItem) return renderCustomItem(item);
 
     return (
@@ -84,7 +84,7 @@ export const AlphabetList: React.FC<AlphabetListProps> = (props) => {
         testID="sectionList"
         ref={sectionListRef}
         sections={sectionData}
-        keyExtractor={(item: IData) => item.key}
+        keyExtractor={(item: IData<any>) => item.key}
         renderItem={onRenderItem}
         renderSectionHeader={onRenderSectionHeader}
         ListHeaderComponent={renderCustomListHeader}

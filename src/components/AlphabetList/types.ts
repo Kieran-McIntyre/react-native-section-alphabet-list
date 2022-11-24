@@ -1,33 +1,33 @@
 import { SectionListData, SectionListProps, TextStyle, ViewStyle } from "react-native";
 
-export interface IData {
-  value: string;
+export interface IData<Type> {
+  value: Type;
   key: string;
 }
 
-export interface ISectionData {
+export interface ISectionData<Type> {
   title: string;
-  data: IData[];
+  data: IData<Type>[];
   index?: number;
 }
-export interface IIndexLetterProps {
-  item: ISectionData,
+export interface IIndexLetterProps<Type> {
+  item: ISectionData<Type>,
   index: number,
   onPress: () => void;
 }
 
-export interface AlphabetListProps extends Partial<SectionListProps<IData>> {
-  data: IData[];
+export interface AlphabetListProps<Type> extends Partial<SectionListProps<IData<Type>>> {
+  data: IData<Type>[];
   index?: string[],
   style?: ViewStyle;
   indexLetterStyle?: TextStyle,
   indexLetterContainerStyle?: ViewStyle,
   indexContainerStyle?: ViewStyle,
   letterListContainerStyle?: ViewStyle,
-  renderCustomItem?: (item: IData) => JSX.Element;
-  renderCustomSectionHeader?: (section: SectionListData<IData>) => JSX.Element;
+  renderCustomItem?: (item: IData<Type>) => JSX.Element;
+  renderCustomSectionHeader?: (section: SectionListData<IData<Type>>) => JSX.Element;
   renderCustomListHeader?: () => JSX.Element;
-  renderCustomIndexLetter?: ({ item, index, onPress }: IIndexLetterProps) => JSX.Element;
+  renderCustomIndexLetter?: ({ item, index, onPress }: IIndexLetterProps<Type>) => JSX.Element;
   getItemHeight?: (sectionIndex: number, rowIndex: number) => number;
   sectionHeaderHeight?: number;
   listHeaderHeight?: number;

@@ -4,7 +4,7 @@ import { ListLetterIndexProps } from "./types"
 import { styles } from "./styles";
 import { ISectionData } from "../AlphabetList/types";
 
-export const ListLetterIndex: React.FC<ListLetterIndexProps> = ({
+export const ListLetterIndex: React.FC<ListLetterIndexProps<any>> = ({
   sectionData,
   onPressLetter,
   indexContainerStyle,
@@ -13,7 +13,7 @@ export const ListLetterIndex: React.FC<ListLetterIndexProps> = ({
   renderCustomIndexLetter,
   letterListContainerStyle
 }) => {
-  const onRenderCustomIndexLetter = ({ item, index }: { item: ISectionData, index: number }) => {
+  const onRenderCustomIndexLetter = ({ item, index }: { item: ISectionData<any>, index: number }) => {
     const onPress = () => onPressLetter(index)
 
     if (renderCustomIndexLetter) {
