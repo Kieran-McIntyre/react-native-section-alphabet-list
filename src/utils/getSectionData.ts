@@ -1,26 +1,26 @@
 import { ISectionData, IData } from "../components/AlphabetList/types";
 
 interface IAlphabetSet {
-  [key: string]: IData[];
+  [key: string]: IData<any>[];
 }
 
 interface IEntry {
   title: string;
-  data: IData[];
+  data: IData<any>[];
 }
 
 interface ILetterMap {
   [key: string]: number
 }
 
-export const getSectionData = (data: IData[], charIndex: string[], uncategorizedAtTop = false) => {
+export const getSectionData = (data: IData<any>[], charIndex: string[], uncategorizedAtTop = false) => {
   const validLettersMap = getValidLettersMap(charIndex)
-  const alphabetEntrySet: [string, IData[]][] = getAlphabetEntrySet(data, validLettersMap);
+  const alphabetEntrySet: [string, IData<any>[]][] = getAlphabetEntrySet(data, validLettersMap);
 
   return alphabetEntrySet
     .map(formatEntry)
     .sort((a, b) => sortSectionsByCharIndex(a, b, validLettersMap, uncategorizedAtTop))
-    .map((section: ISectionData, index: number) => ({ ...section, index }));
+    .map((section: ISectionData<any>, index: number) => ({ ...section, index }));
 };
 
 const getValidLettersMap = (letterMap: string[]) => {
@@ -33,7 +33,7 @@ const getValidLettersMap = (letterMap: string[]) => {
   return map
 }
 
-const getAlphabetEntrySet = (data: IData[], validLettersMap: ILetterMap) => {
+const getAlphabetEntrySet = (data: IData<any>[], validLettersMap: ILetterMap) => {
   const alphabetSet: IAlphabetSet = {}
 
   data.forEach((item) => {
