@@ -9,12 +9,7 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 import { AlphabetList } from 'react-native-section-alphabet-list';
 
@@ -50,7 +45,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <AlphabetList
-        style={{ flex: 1 }}
+        style={styles.alphabetList}
         data={exampleData}
         renderCustomItem={renderListItem}
         renderCustomSectionHeader={renderSectionHeader}
@@ -58,16 +53,22 @@ const App = () => {
         getItemHeight={() => sizes.itemHeight}
         sectionHeaderHeight={sizes.headerHeight}
         listHeaderHeight={sizes.listHeaderHeight}
-        indexLetterStyle={{ color: colors.primary }}
+        indexLetterStyle={{
+          color: colors.primary,
+        }}
       />
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background.light,
+  },
+
+  alphabetList: {
+    flex: 1,
   },
 
   listItemContainer: {
@@ -99,8 +100,8 @@ const styles = StyleSheet.create({
     height: sizes.listHeaderHeight,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });
 
 export default App;

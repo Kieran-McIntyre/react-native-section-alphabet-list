@@ -5720,9 +5720,9 @@ react-native-gradle-plugin@^0.70.3:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz#cbcf0619cbfbddaa9128701aa2d7b4145f9c4fc8"
   integrity sha512-oOanj84fJEXUg9FoEAQomA8ISG+DVIrTZ3qF7m69VQUJyOGYyDZmPqKcjvRku4KXlEH6hWO9i4ACLzNBh8gC0A==
 
-"react-native-section-alphabet-list@file:../react-native-section-alphabet-list-2.1.0.tgz":
-  version "2.1.0"
-  resolved "file:../react-native-section-alphabet-list-2.1.0.tgz#70926454b47730f4f69d91bc84ad7a223a028108"
+"react-native-section-alphabet-list@file:../react-native-section-alphabet-list-3.0.0.tgz":
+  version "3.0.0"
+  resolved "file:../react-native-section-alphabet-list-3.0.0.tgz#fa39844d610958032b5e3f5ccb02a256bbe7315c"
   dependencies:
     react-native-section-list-get-item-layout "^2.2.3"
 

@@ -34,10 +34,11 @@ const getValidLettersMap = (letterMap: string[]) => {
 }
 
 const getAlphabetEntrySet = (data: IData[], validLettersMap: ILetterMap) => {
-  const alphabetSet: IAlphabetSet = {}
+  let alphabetSet: IAlphabetSet = {}
 
   data.forEach((item) => {
     const letter = getItemFirstLetter(item.value, validLettersMap)
+
     if (!letter) return
 
     if (!alphabetSet[letter]) {

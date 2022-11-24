@@ -2,13 +2,15 @@
   "compilerOptions": {
     "allowJs": false,
     "esModuleInterop": true,
-    "target": "es5",
+    "target": "es2016",
     "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
     "declaration": true,
     "outDir": "./dist",
     "strict": true,
     "jsx": "react-native",
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "lib": [
       "esnext",
       "esnext.asynciterable"
