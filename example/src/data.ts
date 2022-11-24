@@ -1,4 +1,4 @@
-const exampleData = [
+export const exampleData = [
   { value: 'Afghanistan', key: 'AF' },
   { value: 'Åland Islands', key: 'AX' },
   { value: 'Albania', key: 'AL' },
@@ -243,5 +243,3 @@ const exampleData = [
   { value: 'Zambia', key: 'ZM' },
   { value: 'Zimbabwe', key: 'ZW' },
 ];
-
-export default exampleData;

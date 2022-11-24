@@ -1,6 +1,6 @@
 {
   "name": "react-native-section-alphabet-list",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "A simple React Native component that takes an array of data and renders a SectionList with alphabetically sorted data.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -36,20 +36,20 @@
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
     "@testing-library/jest-native": "^3.4.3",
-    "@testing-library/react-native": "^7.1.0",
+    "@testing-library/react-native": "^11.4.0",
     "@types/jest": "^25.2.1",
-    "@types/react": "^16.9.32",
-    "@types/react-native": "^0.62.2",
-    "@types/react-test-renderer": "^16.9.2",
+    "@types/react": "^18.0.25",
+    "@types/react-native": "^0.70.6",
+    "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^25.5.0",
+    "eslint": "^8.27.0",
     "jest": "^25.3.0",
     "jest-enzyme": "^7.1.2",
-    "react": "^16.9.0",
-    "react-native": "^0.61.5",
-    "react-test-renderer": "^17.0.1",
+    "react": "^18.2.0",
+    "react-native": "^0.70.5",
+    "react-test-renderer": "^18.2.0",
     "ts-jest": "^25.5.1",
-    "tslint": "^6.1.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.7"
   },
   "dependencies": {
     "react-native-section-list-get-item-layout": "^2.2.3"

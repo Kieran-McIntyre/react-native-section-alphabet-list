@@ -38,6 +38,7 @@ const getAlphabetEntrySet = (data: IData[], validLettersMap: ILetterMap) => {
 
   data.forEach((item) => {
     const letter = getItemFirstLetter(item.value, validLettersMap)
+
     if (!letter) return
 
     if (!alphabetSet[letter]) {

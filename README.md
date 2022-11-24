@@ -33,13 +33,13 @@ For _react-native-section-alphabet-list_, the data does not need to be pre-forma
 
 Using npm:
 
-```bash
+```sh
 npm install react-native-section-alphabet-list
 ```
 
 or with yarn:
 
-```bash
+```sh
 yarn add react-native-section-alphabet-list
 ```
 
