@@ -99,7 +99,7 @@ describe("utils - getSectionData", () => {
       expect(charEnd.title).toBe('#')
     })
 
-    it("uncategorizedAtTop is false > uncategorized items are at top of list", () => {
+    it("uncategorizedAtTop is true > uncategorized items are at top of list", () => {
       // Arrange.
       const sectionData = getSectionData(countriesData, DEFAULT_CHAR_INDEX, true);
       const charStart = sectionData[0]
